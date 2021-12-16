@@ -9,7 +9,8 @@ if ! test -f /hiveos-rig/hiveos.qcow2; then
 
   cd /hiveos-rig
   echo "Downloading HiveOS..."
-  curl -o hiveos.img.xz "https://download.hiveos.farm/$(curl 'https://download.hiveos.farm/VERSIONS.txt' 2>&1 | sed -rn 's/.*(hiveos-.*\.img\.xz)/\1/p' | head -1)"
+  #curl -o hiveos.img.xz "https://download.hiveos.farm/$(curl 'https://download.hiveos.farm/VERSIONS.txt' 2>&1 | sed -rn 's/.*(hiveos-.*\.img\.xz)/\1/p' | head -1)"
+  wget -o hiveos.img.xz https://downloadlhiveos.farm/history/hiveos-0.6-212-stable@211201.img.xz
   echo "Decompressing..."
   xz --decompress hiveos.img.xz
   echo "Converting to qcow2 and recompressing..."
